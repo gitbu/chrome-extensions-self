@@ -1,0 +1,32 @@
+{
+  "name": "Easy",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "description": "这个debug工具很好用",
+  "icons": {
+    "16": "image/icon.jpg",
+    "48": "image/icon.jpg",
+    "128": "image/icon.jpg"
+  },
+  "browser_action": {
+    "default_icon": "image/icon.jpg",
+    "default_title": "查看接口返回数据so easy!",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "contextMenus"
+  ],
+  "background": {
+    "scripts": ["js/background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["js/contentScripts.js"],
+      "css": ["css/contentScripts.css"],
+      "run_at": "document_start"
+    }
+  ],
+  "devtools_page": "devtools.html"
+
+}

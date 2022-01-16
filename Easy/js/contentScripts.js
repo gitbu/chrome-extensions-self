@@ -1,0 +1,1 @@
+console.log('我是一个content-scripts的脚本')

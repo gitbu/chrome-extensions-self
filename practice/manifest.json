@@ -1,0 +1,7 @@
+{
+  "name": "chrome-extension-practive",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "description": "chrome extension practice",
+  "options_page": "options.html"
+}
