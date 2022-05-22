@@ -1,14 +1,36 @@
 {
-  "name": "chrome-extension-practive",
+  "name": "practice",
   "version": "1.0.0",
   "manifest_version": 2,
-  "description": "chrome extension practice",
+  "description": "practice",
+  "browser_action": {
+    "default_title": "这是一个demo",
+    "default_popup": "popup.html"
+  },
   "permissions": [
     "contextMenus",
-    "notifications"
+    "notifications",
+    "webRequest",
+    "webRequestBlocking",
+    "<all_urls>"
   ],
-  "options_page": "options.html",
+  "options_ui": {
+    "page": "options.html"
+  },
   "background": {
     "scripts": ["background.js"]
-  }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["js/content-scripts.js"],
+      "css": ["css/content-scripts.css"]
+    }
+  ],
+  "homepage_url": "https://www.baidu.com",
+  "chrome_url_overrides": {
+    "newtab": "./default.html"
+  },
+  "omnibox": { "keyword": "go" },
+  "devtools_page": "./devtools.html"
 }
